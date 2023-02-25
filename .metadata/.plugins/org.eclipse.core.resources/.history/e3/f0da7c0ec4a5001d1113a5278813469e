@@ -1,0 +1,50 @@
+package day9;
+
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class MultipleWindowHandlingEg {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.gecko.driver", "D:\\SriPriyaRecordings/Jars\\geckodriver.exe");
+		FirefoxDriver driver = new FirefoxDriver();
+		
+		driver.get("https://gmail.com/");
+		
+		String gmail_wid = driver.getWindowHandle();
+//		System.out.println(gmail_wid);
+		
+		driver.findElement(By.linkText("Privacy")).click();
+		driver.findElement(By.linkText("Help")).click();
+		Thread.sleep(5000);
+		Set<String> s = driver.getWindowHandles();
+		
+		for(String wid: s){
+			System.out.println(wid);
+			driver.switchTo().window(wid);
+//			try{
+//				driver.findElement(By.xpath("(//a[text()='Terms of Service'])[1]")).click();
+//				Thread.sleep(5000);
+//				System.out.println(driver.getTitle()+"----"+driver.getCurrentUrl());
+//				break;
+//			}catch(Exception e){
+//				System.out.println("Expected element is not avaialble in this tab: "+driver.getTitle());
+//			}
+			System.out.println(driver.getTitle());
+			if(driver.getTitle().contains("Privacy Policy")){
+				driver.findElement(By.xpath("(//a[text()='Terms of Service'])[1]")).click();
+				Thread.sleep(5000);
+				System.out.println(driver.getTitle()+"----"+driver.getCurrentUrl());
+				break;
+			}
+			
+		}
+		
+		
+//		driver.findElement(By.xpath("(//a[text()='Terms of Service'])[1]")).click();
+
+	}
+
+}

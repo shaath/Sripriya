@@ -1,0 +1,13 @@
+package seleniumgrid;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
+
+public class GridEg1 {
+
+	@Test
+	public void grid(){
+		DesiredCapabilities cap = DesiredCapabilities.firefox();
+		cap
+	}
+}

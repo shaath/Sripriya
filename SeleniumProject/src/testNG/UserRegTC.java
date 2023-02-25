@@ -1,0 +1,47 @@
+package testNG;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class UserRegTC extends TestNGMaster{
+
+	@Test
+	public void orgUserReg() throws InterruptedException{
+		boolean flag = false;
+		expval = uname;
+		driver.findElement(By.linkText("Admin")).click();
+		driver.findElement(By.linkText("User Management")).click();
+		driver.findElement(By.linkText("Users")).click();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(360));
+		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.id("btnAdd")))).click();
+//		driver.findElement(By.id("btnAdd")).click();
+		
+		driver.findElement(By.id("systemUser_employeeName_empName")).click();
+		driver.findElement(By.id("systemUser_employeeName_empName")).clear();
+		driver.findElement(By.id("systemUser_employeeName_empName")).sendKeys(ename);
+		driver.findElement(By.id("systemUser_userName")).sendKeys(uname);
+		driver.findElement(By.id("systemUser_password")).sendKeys(pwd);
+		driver.findElement(By.id("systemUser_confirmPassword")).sendKeys(pwd);
+		driver.findElement(By.id("btnSave")).click();
+		
+		Thread.sleep(5000);		
+		List<WebElement> un = driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr/td[2]/a"));
+		for (int i = 0; i < un.size(); i++) {
+			String actval = un.get(i).getText();
+			if (actval.equalsIgnoreCase(expval)) {
+				flag= true;
+				break;
+			}
+		}
+		
+		Assert.assertEquals(flag, true, "User Registration Failed");
+	}
+}

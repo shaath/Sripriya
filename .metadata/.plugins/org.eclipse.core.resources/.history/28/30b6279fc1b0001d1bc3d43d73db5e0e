@@ -1,0 +1,39 @@
+package driverScripts;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class Keyword {
+
+	public static void main(String[] args) throws IOException {
+		String xlPath = "D:\\SriPriyaRecordings\\Workspace\\SeleniumProject\\src\\inputData\\Keyword.xlsx";
+
+		FileInputStream fi = new FileInputStream(xlPath);
+		
+		XSSFWorkbook wb = new XSSFWorkbook(fi);
+		XSSFSheet tcSheet = wb.getSheet("Testcase");
+		XSSFSheet tsSheet = wb.getSheet("Teststeps");
+		XSSFSheet tdSheet = wb.getSheet("TestData");
+		
+		int tcSheet_RC = tcSheet.getLastRowNum();
+		int tsSheet_RC = tsSheet.getLastRowNum();
+		
+		for (int i = 1; i <= tcSheet_RC; i++) {
+			String exe = tcSheet.getRow(i).getCell(2).getStringCellValue();
+			
+			if (exe.equalsIgnoreCase("Y")) {
+				for (int j = 1; j <= tsSheet_RC; j++) {
+					
+				}
+				
+			}else{
+				tcSheet.getRow(i).createCell(3).setCellValue("BLOCKED");
+			}
+		}
+ 	}
+
+}

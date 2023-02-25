@@ -1,0 +1,20 @@
+package day9;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class ImplicitwaitEg {
+
+	public static void main(String[] args) {
+		
+		
+		System.setProperty("webdriver.gecko.driver", "D:\\SriPriyaRecordings/Jars\\geckodriver.exe");
+		FirefoxDriver driver = new FirefoxDriver();
+		
+		driver.get("https://Amazon.in");
+		
+		driver.findElement(By.xpath("//img[@src='https://m.media-amazon.com/images/I/71usv3CIbTL._SX3000_.jpg']")).click();
+
+	}
+
+}

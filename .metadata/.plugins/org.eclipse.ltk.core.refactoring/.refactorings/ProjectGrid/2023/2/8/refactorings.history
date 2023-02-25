@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;seleniumgrid&apos; to &apos;SeleniumProject/src&apos;&#x0D;&#x0A;- Original project: &apos;ProjectGrid&apos;&#x0D;&#x0A;- Destination element: &apos;SeleniumProject/src&apos;&#x0D;&#x0A;- Original element: &apos;ProjectGrid/src/seleniumgrid&apos;" description="Copy package" destination="=SeleniumProject/src" element1="/src&lt;seleniumgrid" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1677117546702" version="1.0"/>
+</session>

@@ -1,0 +1,12 @@
+package com.SeleniumProject.javaprogrammes;
+
+public class StringEg {
+
+	public static void main(String[] args) {
+		String x = "Selenium";
+		
+		System.out.println(x.length());
+		
+	}
+
+}

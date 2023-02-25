@@ -1,0 +1,9 @@
+package seleniumgrid;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+
+public class GridEg1 {
+
+	DesiredCapabilities cap = DesiredCapabilities.firefox();
+	cap
+}

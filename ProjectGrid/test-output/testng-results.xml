@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="113448" started-at="2023-02-24T01:43:49Z" finished-at="2023-02-24T01:45:43Z">
+    <groups>
+    </groups>
+    <test name="edge" duration-ms="93357" started-at="2023-02-24T01:43:49Z" finished-at="2023-02-24T01:45:23Z">
+      <class name="seleniumgrid.GridEg1">
+        <test-method status="PASS" signature="grid(java.lang.String, java.lang.String)[pri:0, instance:seleniumgrid.GridEg1@62ee68d8]" name="grid" duration-ms="93094" started-at="2023-02-24T07:13:50Z" finished-at="2023-02-24T07:15:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MicrosoftEdge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- grid -->
+      </class> <!-- seleniumgrid.GridEg1 -->
+    </test> <!-- edge -->
+    <test name="chrome" duration-ms="103149" started-at="2023-02-24T01:43:49Z" finished-at="2023-02-24T01:45:33Z">
+      <class name="seleniumgrid.GridEg1">
+        <test-method status="PASS" signature="grid(java.lang.String, java.lang.String)[pri:0, instance:seleniumgrid.GridEg1@6d00a15d]" name="grid" duration-ms="102898" started-at="2023-02-24T07:13:50Z" finished-at="2023-02-24T07:15:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- grid -->
+      </class> <!-- seleniumgrid.GridEg1 -->
+    </test> <!-- chrome -->
+    <test name="firefox" duration-ms="113448" started-at="2023-02-24T01:43:49Z" finished-at="2023-02-24T01:45:43Z">
+      <class name="seleniumgrid.GridEg1">
+        <test-method status="PASS" signature="grid(java.lang.String, java.lang.String)[pri:0, instance:seleniumgrid.GridEg1@458ad742]" name="grid" duration-ms="113196" started-at="2023-02-24T07:13:50Z" finished-at="2023-02-24T07:15:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Windows]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- grid -->
+      </class> <!-- seleniumgrid.GridEg1 -->
+    </test> <!-- firefox -->
+  </suite> <!-- Suite -->
+</testng-results>

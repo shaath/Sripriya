@@ -1,0 +1,60 @@
+package driverScripts;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import methods.BusinessMethods;
+
+public class Keyword {
+
+	public static void main(String[] args) throws IOException {
+		BusinessMethods bm = new BusinessMethods();
+		String res = null;
+		String xlPath = "D:\\SriPriyaRecordings\\Workspace\\SeleniumProject\\src\\inputData\\Keyword.xlsx";
+
+		FileInputStream fi = new FileInputStream(xlPath);
+		
+		XSSFWorkbook wb = new XSSFWorkbook(fi);
+		XSSFSheet tcSheet = wb.getSheet("Testcase");
+		XSSFSheet tsSheet = wb.getSheet("Teststeps");
+		XSSFSheet tdSheet = wb.getSheet("TestData");
+		
+		int tcSheet_RC = tcSheet.getLastRowNum();
+		int tsSheet_RC = tsSheet.getLastRowNum();
+		
+		for (int i = 1; i <= tcSheet_RC; i++) {
+			String exe = tcSheet.getRow(i).getCell(2).getStringCellValue();
+			
+			if (exe.equalsIgnoreCase("Y")) {
+				String tc_tcID = tcSheet.getRow(i).getCell(0).getStringCellValue();
+				
+				for (int j = 1; j <= tsSheet_RC; j++) {
+					String ts_tcID = tsSheet.getRow(j).getCell(0).getStringCellValue();
+					if (tc_tcID.equalsIgnoreCase(ts_tcID)) {
+						String key = tsSheet.getRow(j).getCell(3).getStringCellValue();
+						
+						switch(key){
+						case "Launch":
+							String br = tdSheet.getRow(1).getCell(0).getStringCellValue();
+							String url = tdSheet.getRow(1).getCell(1).getStringCellValue();
+							res = bm.OrgLaunch(br, url);
+							break;
+						case "login":
+							String u = tdSheet.getRow(1).getCell(2).getStringCellValue();
+							String p = tdSheet.getRow(1).getCell(3).getStringCellValue();
+							res = bm.OrgLogin(u, p);
+						}
+					}
+				}
+				
+			}else{
+				tcSheet.getRow(i).createCell(3).setCellValue("BLOCKED");
+			}
+		}
+ 	}
+
+}

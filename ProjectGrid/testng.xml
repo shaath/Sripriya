@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+  <test name="firefox">
+  <parameter name="Browser" value="firefox"/>
+  <parameter name="Plotform" value="Windows"/>
+    <classes>
+      <class name="seleniumgrid.GridEg1"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="chrome">
+  <parameter name="Browser" value="chrome"/>
+  <parameter name="Plotform" value="Windows"/>
+    <classes>
+      <class name="seleniumgrid.GridEg1"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test name="edge">
+  <parameter name="Browser" value="MicrosoftEdge"/>
+  <parameter name="Plotform" value="Windows"/>
+    <classes>
+      <class name="seleniumgrid.GridEg1"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

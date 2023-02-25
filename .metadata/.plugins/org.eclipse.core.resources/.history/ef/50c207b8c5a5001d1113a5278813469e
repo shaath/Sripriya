@@ -1,0 +1,17 @@
+package day9;
+
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class ImplicitwaitEg {
+
+	public static void main(String[] args) {
+		//img[@src='https://m.media-amazon.com/images/I/71usv3CIbTL._SX3000_.jpg']
+		
+		System.setProperty("webdriver.gecko.driver", "D:\\SriPriyaRecordings/Jars\\geckodriver.exe");
+		FirefoxDriver driver = new FirefoxDriver();
+		
+		driver.get("https://gmail.com/");
+
+	}
+
+}
